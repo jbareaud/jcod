@@ -12,7 +12,7 @@ public class TranslucenceWrapperFOV implements FOVSolver {
     static enum RayType {
         PRIMARY, SECONDARY, TERTIARY
     };
-    private FOVSolver fov = new ShadowFOV();
+    private FOVSolver fov;
     private float[][] lightMap, resistanceMap, shadowMap;
     private int width, height, startx, starty;
     private RadiusStrategy rStrat;
@@ -22,6 +22,7 @@ public class TranslucenceWrapperFOV implements FOVSolver {
      * Uses default ShadowFOV to create lit area mapping
      */
     public TranslucenceWrapperFOV() {
+    	this.fov = new ShadowFOV();
     }
 
     /**

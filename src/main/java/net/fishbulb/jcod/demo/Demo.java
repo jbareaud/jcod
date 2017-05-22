@@ -4,16 +4,16 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
-import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.google.common.collect.Iterators;
 import net.fishbulb.jcod.Console;
 import net.fishbulb.jcod.display.ImageTileset;
 import net.fishbulb.jcod.display.TileDisplay;
 import net.fishbulb.jcod.display.Tileset;
 import net.fishbulb.jcod.util.ImageUtils;
+import net.fishbulb.jcod.util.extra.ExtraUtils;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -46,7 +46,7 @@ public class Demo extends InputAdapter implements ApplicationListener {
         add(Image.class);
     }};
 
-    Iterator<Class<? extends DemoApplet>> applets = Iterators.cycle(allApplets);
+    Iterator<Class<? extends DemoApplet>> applets = ExtraUtils.cycle(allApplets);
 
     @SuppressWarnings("rawtypes")
     private DemoApplet createApplet(Class<? extends DemoApplet> klass) {
@@ -109,7 +109,7 @@ public class Demo extends InputAdapter implements ApplicationListener {
 
         root.print(APPLET_X, APPLET_Y + active.getHeight() + 2, "Press space to switch between demos.");
 
-        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f));
         stage.draw();
     }

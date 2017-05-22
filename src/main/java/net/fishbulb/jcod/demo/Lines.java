@@ -2,12 +2,12 @@ package net.fishbulb.jcod.demo;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
-import com.google.common.collect.Iterators;
 import net.fishbulb.jcod.Console;
 import net.fishbulb.jcod.util.BlendMode;
 import net.fishbulb.jcod.util.PlotAlgorithm;
 import net.fishbulb.jcod.util.PlotAlgorithms;
 import net.fishbulb.jcod.util.PlotFunction;
+import net.fishbulb.jcod.util.extra.ExtraUtils;
 
 import java.text.MessageFormat;
 import java.util.Iterator;
@@ -24,10 +24,10 @@ public class Lines extends DemoApplet {
 
     float currentAlpha = 1.0f;
 
-    Iterator<BlendMode> modes = Iterators.cycle(BlendMode.values());
+    Iterator<BlendMode> modes = ExtraUtils.cycle(BlendMode.values());
     BlendMode currentMode;
 
-    Iterator<? extends PlotAlgorithm> algos = Iterators.cycle(PlotAlgorithms.values());
+    Iterator<? extends PlotAlgorithm> algos = ExtraUtils.cycle(PlotAlgorithms.values());
     PlotAlgorithm currentAlgo;
 
     PlotFunction listener = new PlotFunction() {

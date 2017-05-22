@@ -72,7 +72,6 @@ public enum PlotAlgorithms implements PlotAlgorithm {
      * Based on SquidLib by Eben Howard - http://squidpony.com - howard@squidpony.com
      */
     Elias {
-        @SuppressWarnings({"UnusedDeclaration", "SuspiciousNameCombination"})
         public void apply(int startx, int starty, int endx, int endy, PlotFunction plot) {
             float x1 = startx, y1 = starty, x2 = endx, y2 = endy;
             float grad, xd, yd, length, xm, ym, xgap, ygap, xend, yend, xf, yf, brightness1, brightness2;

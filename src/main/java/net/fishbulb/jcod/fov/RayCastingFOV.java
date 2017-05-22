@@ -1,7 +1,6 @@
 package net.fishbulb.jcod.fov;
 
-
-import com.google.common.annotations.Beta;
+import net.fishbulb.jcod.util.extra.Beta;
 
 /**
  * Simple raytracing algorithm for Field of View. In large areas will be

@@ -1,7 +1,6 @@
 package net.fishbulb.jcod.fov;
 
-
-import com.google.common.annotations.Beta;
+import net.fishbulb.jcod.util.extra.Beta;
 
 /**
  * This class merges the results from two or more FOVSolvers.

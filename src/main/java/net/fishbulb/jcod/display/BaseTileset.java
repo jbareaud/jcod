@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class BaseTileset implements Tileset {
 
-    @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     @Getter @Setter
     private Map<Character, Tile> tileMap = new HashMap<>();
 

@@ -531,7 +531,7 @@ public class Console {
      * @param msg Message to test
      * @return Number of lines that would be printed
      */
-    public int getHeightRect(@SuppressWarnings("UnusedParameters") int x, int y, int w, int h, String msg) {
+    public int getHeightRect(int x, int y, int w, int h, String msg) {
         String wrapped = wrap(msg, w);
         if (h == 0) {
             // Not documented in getHeightRect, but consistent with printRect and TCOD's actual behavior
@@ -615,7 +615,6 @@ public class Console {
         printFrame(x, y, w, h, true, blendFunction, null);
     }
 
-    @SuppressWarnings({"ConstantConditions", "UnusedDeclaration"})
     public void blit(int xSrc, int ySrc, int wSrc, int hSrc, Console dest, int xDest, int yDest,
                      float fgAlpha, float bgAlpha) {
         // if wSrc or hSrc are 0, set them to width or height

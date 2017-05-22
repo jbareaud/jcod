@@ -1,10 +1,11 @@
 package net.fishbulb.jcod.util;
 
-import com.google.common.annotations.Beta;
-
 import java.awt.Point;
 import java.util.LinkedList;
 import java.util.List;
+
+import net.fishbulb.jcod.util.extra.Beta;
+
 
 /**
  * Contains methods to draw antialiased lines based on floating point

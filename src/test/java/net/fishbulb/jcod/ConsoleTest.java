@@ -1,21 +1,21 @@
 package net.fishbulb.jcod;
 
-import mockit.Mocked;
-import net.fishbulb.jcod.display.TileDisplay;
-import net.fishbulb.jcod.display.Tileset;
-import org.testng.annotations.Test;
-import org.testng.log4testng.Logger;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import java.nio.charset.Charset;
 
-import static org.testng.Assert.assertEquals;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ConsoleTest {
-    private static final Logger LOG = Logger.getLogger(ConsoleTest.class);
+
+    private static final Logger LOG = LoggerFactory.getLogger(ConsoleTest.class);
 
     // not actually useful yet...
-    @Mocked Tileset mockTileset;
-    @Mocked TileDisplay mockDisplay;
+    // TODO @Mocked Tileset mockTileset;
+    // TODO @Mocked TileDisplay mockDisplay;
 
     // helps in diagnosing failed test results
     private static byte[] strBytes(String s) {
@@ -25,13 +25,15 @@ public class ConsoleTest {
     @Test
     public void testGetColorString() throws Exception {
         assertEquals(Console.getColorControlString(Console.COLCTRL_1), "\u0001");
-        assertEquals(
+        assertEquals(Console.getColorControlString(Console.COLCTRL_1), "\u0001");
+
+        assertArrayEquals(
                 strBytes(Console.getRGBAColorControlString(Console.COLCTRL_FORE_RGB, 0, 0, 0, 0)),
                 strBytes("\u0006\0\0\0\0")
         );
 
-        assertEquals(strBytes(
-                Console.getRGBAColorControlString(Console.COLCTRL_BACK_RGB, 0.5f, 0.25f, 1f, 0f)),
+        assertArrayEquals(
+                strBytes(Console.getRGBAColorControlString(Console.COLCTRL_BACK_RGB, 0.5f, 0.25f, 1f, 0f)),
                 strBytes("\u0007\u007f\u003f\u00ff\u0000")
         );
     }
@@ -93,7 +95,4 @@ public class ConsoleTest {
         wrapped = Console.wrap("foo\nbar baz xyz mumble frotz", 12);
         assertEquals(wrapped, "foo\nbar baz xyz\nmumble frotz");
     }
-
-
-
 }

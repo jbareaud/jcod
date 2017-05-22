@@ -1,10 +1,11 @@
 package net.fishbulb.jcod.fov;
 
-import com.google.common.annotations.Beta;
 
 import java.awt.Point;
 import java.util.LinkedList;
 import java.util.Queue;
+
+import net.fishbulb.jcod.util.extra.Beta;
 
 /**
  * Uses a series of rays internal to the start and end point to determine

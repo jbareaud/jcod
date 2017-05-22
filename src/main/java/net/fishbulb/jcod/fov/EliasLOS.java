@@ -1,7 +1,7 @@
 package net.fishbulb.jcod.fov;
 
-import com.google.common.annotations.Beta;
 import net.fishbulb.jcod.util.Elias;
+import net.fishbulb.jcod.util.extra.Beta;
 
 import java.awt.Point;
 import java.util.List;

@@ -7,7 +7,6 @@ public final class DemoDesktop {
 
     public static void main(String[] args) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.useGL20 = true;
         config.width = 800;
         config.height = 600;
         config.vSyncEnabled = false;

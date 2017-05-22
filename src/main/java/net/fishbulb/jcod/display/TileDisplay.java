@@ -3,7 +3,7 @@ package net.fishbulb.jcod.display;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Widget;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
@@ -54,13 +54,12 @@ public class TileDisplay extends Widget {
         tiles[x][y] = tile;
     }
 
-    @SuppressWarnings("UnusedDeclaration") // Not an accessor, so I have to suppress the warning
     public void clearTile(int x, int y, Tile tile) {
         tiles[x][y] = null;
     }
 
     @Override
-    public void draw(SpriteBatch batch, float parentAlpha) {
+    public void draw(Batch batch, float parentAlpha) {
         // Color.equals compares int components and doesn't need an epsilon
         if ((abs(1.0 - parentAlpha) < 0.0001) && getColor().equals(Color.WHITE)) {
             drawSimple(batch);
@@ -70,7 +69,7 @@ public class TileDisplay extends Widget {
     }
 
     // Draws tiles without any adjustment to sprite batch color
-    private void drawSimple(SpriteBatch batch) {
+    private void drawSimple(Batch batch) {
         float xPos = getX();
         float yPos = getY();
         // draw background
@@ -101,7 +100,7 @@ public class TileDisplay extends Widget {
     }
 
     // drawSimple specialized to adjust colors
-    private void drawHairy(SpriteBatch batch, float parentAlpha) {
+    private void drawHairy(Batch batch, float parentAlpha) {
         float xPos = getX();
         float yPos = getY();
         // draw background

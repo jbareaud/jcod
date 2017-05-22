@@ -6,7 +6,6 @@ public class CharCodes {
      * The archaeic "OEM" character set, aka Code Page 437.  Names in here are taken exactly from TCOD, with the
      * TCOD_CHAR_ prefix removed.
      */
-    @SuppressWarnings("UnusedDeclaration")
     public static final class OEM {
         public static final char HLINE = 196; // HorzLine
         public static final char VLINE = 179; // VertLine
